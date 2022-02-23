@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37312162, g: 0.3807416, b: 0.35872656, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312216, g: 0.38074353, b: 0.3587268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315794681}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3.5, z: 9.5}
+  m_LocalPosition: {x: -0.712, y: 3.5, z: 9.5}
   m_LocalScale: {x: 0.6999999, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 7788107}
@@ -408,7 +408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392490818}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalPosition: {x: -1.41, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 678076315}
@@ -595,13 +595,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.078107364, y: -0.6182832, z: -0.098018736, w: 0.77589786}
+  m_LocalRotation: {x: 0.08858534, y: -0.70122486, z: -0.088662684, w: 0.7018371}
   m_LocalPosition: {x: 0, y: 3, z: 10.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -77.1, z: -14.4}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.95, z: -14.4}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.0034091165, y: -0.70476204, z: 0.0033789794, w: 0.7094276}
-  m_LocalPosition: {x: 16.75247, y: 3.6886694, z: 9.520159}
+  m_LocalPosition: {x: 12.17, y: 3.6886694, z: 9.520159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1065,6 +1065,8 @@ GameObject:
   - component: {fileID: 1390958045}
   - component: {fileID: 1390958048}
   - component: {fileID: 1390958047}
+  - component: {fileID: 1390958046}
+  - component: {fileID: 1390958049}
   m_Layer: 0
   m_Name: JetPackLeft
   m_TagString: Untagged
@@ -1080,13 +1082,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390958044}
   m_LocalRotation: {x: -0.18770187, y: -0, z: -0, w: 0.9822261}
-  m_LocalPosition: {x: 0.2, y: -0.2, z: -0.4}
+  m_LocalPosition: {x: 0, y: -0.2, z: -0.4}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1342695249}
   m_Father: {fileID: 1631292629}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -21.637, y: 0, z: 0}
+--- !u!114 &1390958046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390958044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d86c814db1cbae40862d8cadbede17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinspeed: 0
+  tf_player: {fileID: 258141600}
+  speed: 0.05
 --- !u!23 &1390958047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1106,7 +1123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21ac4fb211c985948b0b204cd23790e5, type: 2}
+  - {fileID: 2100000, guid: 0443c989459c3ba419197e8df69c2034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1136,6 +1153,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390958044}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1390958049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390958044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d86c814db1cbae40862d8cadbede17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinspeed: 0.2
+  tf_player: {fileID: 258141600}
+  speed: 0.05
 --- !u!1 &1631292628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,14 +1192,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631292628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.5}
+  m_LocalPosition: {x: -0.107, y: 1, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 258141600}
   - {fileID: 1916292669}
   - {fileID: 1390958045}
+  - {fileID: 2039447376}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1754140843
 GameObject:
@@ -1451,6 +1484,8 @@ GameObject:
   - component: {fileID: 1916292669}
   - component: {fileID: 1916292672}
   - component: {fileID: 1916292671}
+  - component: {fileID: 1916292670}
+  - component: {fileID: 1916292673}
   m_Layer: 0
   m_Name: JetPackRight
   m_TagString: Untagged
@@ -1466,13 +1501,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916292668}
   m_LocalRotation: {x: -0.18770187, y: -0, z: -0, w: 0.9822261}
-  m_LocalPosition: {x: 0.7, y: -0.2, z: -0.4}
+  m_LocalPosition: {x: 1, y: -0.2, z: -0.4}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1270140541}
   m_Father: {fileID: 1631292629}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -21.637, y: 0, z: 0}
+--- !u!114 &1916292670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916292668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d86c814db1cbae40862d8cadbede17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinspeed: 0
+  tf_player: {fileID: 258141600}
+  speed: 0.05
 --- !u!23 &1916292671
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1492,7 +1542,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21ac4fb211c985948b0b204cd23790e5, type: 2}
+  - {fileID: 2100000, guid: 0443c989459c3ba419197e8df69c2034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1522,6 +1572,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916292668}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1916292673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916292668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d86c814db1cbae40862d8cadbede17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinspeed: 0.2
+  tf_player: {fileID: 258141600}
+  speed: 0.05
 --- !u!1 &1997924977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1679,7 @@ GameObject:
   - component: {fileID: 2039447376}
   - component: {fileID: 2039447379}
   - component: {fileID: 2039447378}
+  - component: {fileID: 2039447377}
   m_Layer: 0
   m_Name: Gunbody
   m_TagString: Untagged
@@ -1629,15 +1695,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039447375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: 2.5}
+  m_LocalPosition: {x: 0.5, y: 0, z: 1}
   m_LocalScale: {x: 0.1, y: 0.2, z: 0.8}
   m_Children:
   - {fileID: 1191940620}
   - {fileID: 1754140844}
   - {fileID: 1997924978}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1631292629}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039447377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039447375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c085a77a41629b049a0546440d46e23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinspeed: 0
+  tf_player: {fileID: 258141600}
+  speed: 1
 --- !u!23 &2039447378
 MeshRenderer:
   m_ObjectHideFlags: 0
