@@ -53,6 +53,7 @@ public class GunController : MonoBehaviour
     {   
         Debug.Log("총 발사");
         currentGun.ps_Muzzle_Flash.Play();
+        currentGun.animator.SetTrigger("GunFire");
         var clone = Instantiate(currentGun.go_Bullet_Prefab,currentGun.ps_Muzzle_Flash.transform.position
                                ,Quaternion.identity);
         clone.GetComponent<Rigidbody>().AddForce(transform.forward*currentGun.speed);
