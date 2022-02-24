@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    [Header("총구섬광")]
-    [SerializeField]  ParticleSystem ps_MuzzleFalsh;
+    [Header("현재 장착된 총")]
+    [SerializeField] Gun currentGun;
 
-    [Header("총항 플리팹")]
-    [SerializeField] GameObject go_bullet_Prefab;
-    
-    [Header("총알 스피드")]
-    [SerializeField] float bulletSpeed;
+    float currentShootingRate;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentShootingRate = 0;
     }
 
     // Update is called once per frame
     void Update()
     {   
+        ShootingRateCalc();
         TryFire();
         LockOnMouse();
     }
@@ -39,9 +36,15 @@ public class GunController : MonoBehaviour
     }
     void TryFire()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetButton("Fire1"))
         {
-            Fire();
+            if(currentShootingRate<=0)
+            {
+                currentShootingRate = currentGun.ShootingRate;
+
+                Fire();
+            }
+            
         }
 
     }
@@ -49,8 +52,20 @@ public class GunController : MonoBehaviour
     void Fire()
     {   
         Debug.Log("총 발사");
-        ps_MuzzleFalsh.Play();
-        var clone = Instantiate(go_bullet_Prefab,ps_MuzzleFalsh.transform.position,Quaternion.identity);
-        clone.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed);
+        currentGun.ps_Muzzle_Flash.Play();
+        var clone = Instantiate(currentGun.go_Bullet_Prefab,currentGun.ps_Muzzle_Flash.transform.position
+                               ,Quaternion.identity);
+        clone.GetComponent<Rigidbody>().AddForce(transform.forward*currentGun.speed);
+    }
+
+
+
+    void ShootingRateCalc()
+    {
+        if(currentShootingRate >0)
+        {
+            currentShootingRate-= Time.deltaTime;
+        }
+
     }
 }
