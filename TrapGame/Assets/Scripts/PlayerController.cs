@@ -10,12 +10,22 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody theRigid;
 
+    public bool IsJet{get ; private set;}
+    
+    [Header("부스터")]
+    [SerializeField] ParticleSystem ps_LeftEngine;
+    [SerializeField] ParticleSystem ps_Right_Engine;
+
+    AudioSource audioSource;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        IsJet = false;
         theRigid = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,12 +53,28 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space))
         {
-            theRigid.AddForce(Vector3.up*jetPackSpeed);
+            if(!IsJet)
+            {
+                ps_LeftEngine.Play();
+                ps_Right_Engine.Play();
+                audioSource.Play();
+                IsJet = true;
+            }
 
+    
+            theRigid.AddForce(Vector3.up*jetPackSpeed);
         }
         else
         {
             theRigid.AddForce(Vector3.down*jetPackSpeed);
+            if(IsJet)
+            {
+                ps_LeftEngine.Stop();
+                ps_Right_Engine.Stop();
+                audioSource.Stop();
+                
+                IsJet = false;
+            }
 
         }
 
