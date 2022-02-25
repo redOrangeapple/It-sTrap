@@ -32,6 +32,9 @@ public class Gun : MonoBehaviour
     [Header("애니메이터")]
     public Animator animator;
 
+    [Header("총알 발사 사운드")]
+    public string sound_fire;
+
 
 
 }
