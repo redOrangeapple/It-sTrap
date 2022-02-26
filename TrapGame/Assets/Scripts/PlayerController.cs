@@ -11,12 +11,15 @@ public class PlayerController : MonoBehaviour
     Rigidbody theRigid;
 
     public bool IsJet{get ; private set;}
+ 
     
     [Header("부스터")]
     [SerializeField] ParticleSystem ps_LeftEngine;
     [SerializeField] ParticleSystem ps_Right_Engine;
 
     AudioSource audioSource;
+
+    jetEngineFuelManager thefuel;
 
 
 
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
         IsJet = false;
         theRigid = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        thefuel = FindObjectOfType<jetEngineFuelManager>();
     }
 
     // Update is called once per frame
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
     void TryJet()
     {
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && thefuel.IsFuel)
         {
             if(!IsJet)
             {
@@ -72,7 +76,7 @@ public class PlayerController : MonoBehaviour
                 ps_LeftEngine.Stop();
                 ps_Right_Engine.Stop();
                 audioSource.Stop();
-                
+
                 IsJet = false;
             }
 
