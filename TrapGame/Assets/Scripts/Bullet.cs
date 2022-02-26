@@ -24,6 +24,13 @@ public class Bullet : MonoBehaviour
         var clone = Instantiate(go_RicochetEffect,contactPoint.point
                         ,Quaternion.LookRotation(contactPoint.normal)); //LookRotation 특정방향을 보도록만듬
 
+
+        if(other.transform.CompareTag("Mine"))
+        {
+            other.transform.GetComponent<Mine>().Damaged(damage);
+        }
+
+
         Destroy(clone,0.5f);
         Destroy(gameObject);
     }
