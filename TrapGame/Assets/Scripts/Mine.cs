@@ -46,6 +46,7 @@ public class Mine : MonoBehaviour
         {
 
             Debug.Log("플레이어와 충돌했습니다");
+            SoundManager.instance.PlaySE("Mine");
             other.transform.GetComponent<StatusManager>().DrecreaseHp(damage);
                Explosion();
                    
