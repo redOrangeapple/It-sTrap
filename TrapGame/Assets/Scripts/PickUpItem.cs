@@ -12,7 +12,8 @@ public class PickUpItem : MonoBehaviour
                 if(item.itemtype == Itemtype.Score)
                 {
                     SoundManager.instance.PlaySE("Score");
-                    Debug.Log(item.extraScore+"를 획득했습니다");
+
+                    ScoreManager.ExtraScore += item.extraScore;
 
                 }
                 Destroy(other.gameObject);
