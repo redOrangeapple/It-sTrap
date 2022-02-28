@@ -37,6 +37,7 @@ public class StageManager : MonoBehaviour
             PlayerRigid.gameObject.transform.position = tf_OriginPos.position;
             go_Stages[CurrentStage++].SetActive(false);
             go_Stages[CurrentStage].SetActive(true);
+            theSM.ResetCurrentScore();
 
         }
         else Debug.Log("모든 스테이지 클리어");

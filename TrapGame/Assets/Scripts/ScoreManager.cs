@@ -12,6 +12,14 @@ public class ScoreManager : MonoBehaviour
         return CurrentScore;
     }
 
+    public void ResetCurrentScore()
+    {
+        CurrentScore = 0 ; 
+        DistanceScore = 0 ;
+        MaxDistance = 0 ;
+        ExtraScore = 0 ;   
+    }
+
     public static int ExtraScore;  //아이템점수
  
     int DistanceScore ; // 거리점수
