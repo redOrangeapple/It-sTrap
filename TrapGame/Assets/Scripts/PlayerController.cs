@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool canMove = true;
+
     [Header("무빙 속도 조절")]
    [SerializeField] float moveSpeed;
    [SerializeField] float jetPackSpeed;
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void Trymove()
     {
-        if(Input.GetAxisRaw("Horizontal")!=0)
+        if(Input.GetAxisRaw("Horizontal")!=0 && canMove)
         {
             // 좌우 방향키 리턴
             Vector3 moveDir = new Vector3(0,0,Input.GetAxisRaw("Horizontal"));
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
     void TryJet()
     {
 
-        if(Input.GetKey(KeyCode.Space) && thefuel.IsFuel)
+        if(Input.GetKey(KeyCode.Space) && thefuel.IsFuel && canMove)
         {
             if(!IsJet)
             {

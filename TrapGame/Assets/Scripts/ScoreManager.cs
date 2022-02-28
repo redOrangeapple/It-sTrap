@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     int CurrentScore; // 현재점수
+
+    public int GetCurrentScore()
+    {
+        return CurrentScore;
+    }
+
     public static int ExtraScore;  //아이템점수
  
     int DistanceScore ; // 거리점수

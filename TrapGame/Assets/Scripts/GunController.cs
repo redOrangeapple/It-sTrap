@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviour
 {
@@ -9,11 +10,20 @@ public class GunController : MonoBehaviour
 
     float currentShootingRate;
 
+    [SerializeField] Text txt_CurrentGun;
+
 
     // Start is called before the first frame update
     void Start()
     {
         currentShootingRate = 0;
+        BulletUISetting();
+    }
+
+    public void BulletUISetting()
+    {
+         txt_CurrentGun.text = "x "+ currentGun.bulletcount;
+
     }
 
     // Update is called once per frame
@@ -36,7 +46,7 @@ public class GunController : MonoBehaviour
     }
     void TryFire()
     {
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButton("Fire1") && currentGun.bulletcount >0)
         {
             if(currentShootingRate<=0)
             {
@@ -51,7 +61,9 @@ public class GunController : MonoBehaviour
 
     void Fire()
     {   
-        Debug.Log("총 발사");
+        // Debug.Log("총 발사");
+        currentGun.bulletcount--;
+        BulletUISetting();
         currentGun.ps_Muzzle_Flash.Play();
         currentGun.animator.SetTrigger("GunFire");
 
